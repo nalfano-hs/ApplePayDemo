@@ -47,10 +47,13 @@ driver = webdriver.Remote(
 try:
     wait = WebDriverWait(driver, 10)
 
-    #These settings are for adjusting the sensitivity of the find by image feature
+    #These settings are for adjusting the sensitivity of the find-by-image feature
     driver.update_settings({"imageMatchThreshold": "0.2", "fixImageTemplateScale": True})
 
-    #Navigate to the apple pay demo website
+    #optional setting allows you to get a screenshot of the screen with a box highlighting where the image was matched
+    #driver.update_settings({"getMatchedImageResult": True})
+
+    #Navigate to the Apple Pay demo website
     driver.get("https://applepaydemo.apple.com/")
 
     #Switches to NATIVE_APP context, it will not find the elements by image in a webview context
@@ -72,6 +75,11 @@ try:
 
     #Clicks on confirm apple pay in the assistive touch menu
     confirm_apple_pay = driver.find_element(By.IMAGE, confirm_apple_pay_base64)
+
+    #The two below lines are optional and will output a PNG showing where the image matched
+    # with open("confapppaymatch.png", "wb") as fh:
+    #     fh.write(base64.b64decode(confirm_apple_pay.get_attribute('visual')))
+    
     confirm_apple_pay.click()
 
     #Enters the passcode, when prompted for it
