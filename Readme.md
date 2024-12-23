@@ -12,7 +12,7 @@ This script does require the device to be configured in a specific way for it to
  - Sign into an Apple account with an Apple wallet that has at least one card in it.
  - Navigate to Settings > Accessibility > Touch > AssistiveTouch and turn on AssistiveTouch
     - Scroll to the bottom of the Assistive touch page and turn on "Confirm with AssistiveTouch". Follow the prompts that appear (this will require you to double press the power button to complete)
-    - In the AssistiveTouch menu select "Customize Top Level Menu" and select any icon and change it to the Apple Pay icon. This script assumes the Apple Pay icon is on the top level but if you are building your own script this may not be necessary but you will likely need to add more steps to navigate to the default location of that button.
+    - In the AssistiveTouch menu select "Customize Top Level Menu" and select any icon and change it to the Apple Pay icon. This script assumes the Apple Pay icon is on the top level but if you are building your own script this may not be necessary but you will likely need to add more steps to navigate to the default location of that button. (This option is no longer available on iOS 18+)
     - Back on the main AssistiveTouch menu you will also want to set the "Idle Opacity" to 100%, this will make it easier to match the image. 
 
 ## Images Plugin
